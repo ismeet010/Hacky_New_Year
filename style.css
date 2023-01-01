@@ -1,36 +1,26 @@
 body
 {
- text-align:center;
+ /* text-align:center; */
  width:100%;
- height:100%;
+ height:100vh;
  margin:0 auto;
  padding:0px;
  font-family:helvetica;
- background-color:#F79F81;
- overflow-y: hidden;
+ background: 
+    linear-gradient(#0007, #0000),#123;
+ overflow: hidden;
 }
-#wrapper
+/* #wrapper
 {
  text-align:center;
  margin:0 auto;
  padding:0px;
- /* width:995px; */
+ width:995px;
 }
 #effect
 {
- background-color:#610B0B;
  position:relative;	
- /* width:380px;
- height:220px;
- margin-left:300px; */
- box-shadow:0px 0px 10px 0px #610B0B;
-}
-#effect p
-{
- margin-top:10px;
- font-size:30px;
- color:#F79F81;
-}
+} */
 
 #curtain1
 {
@@ -57,4 +47,192 @@ body
     width:100px;
     height:140px;
 }
+
+
+
+@Keyframes Firework {
+  0% { Transform: Translate(Var(--X), Var(--InitialY)); Width: Var(--InitialSize); Opacity: 1; }
+  50% { Width: 0.5vmin; Opacity: 1; }
+  100% { Width: Var(--FinalSize); Opacity: 0; }
+}
+
+/* @Keyframes FireworkPseudo {
+  0% { Transform: Translate(-50%, -50%); Width: Var(--InitialSize); Opacity: 1; }
+  50% { Width: 0.5vmin; Opacity: 1; }
+  100% { Width: Var(--FinalSize); Opacity: 0; }
+}
+ */
+.Firework,
+.Firework::Before,
+.Firework::After
+{
+  --InitialSize: 0.5vmin;
+  --FinalSize: 45vmin;
+  --ParticleSize: 0.2vmin;
+  --Color1: Yellow;
+  --Color2: Khaki;
+  --Color3: White;
+  --Color4: Lime;
+  --Color5: Gold;
+  --Color6: Mediumseagreen;
+  --Y: -30vmin;
+  --X: -50%;
+  --InitialY: 60vmin;
+  Content: "";
+  Animation: Firework 2s Infinite;
+  Position: Absolute;
+  Top: 50%;
+  Left: 50%;
+  Transform: Translate(-50%, Var(--Y));
+  Width: Var(--InitialSize);
+  Aspect-Ratio: 1;
+  Background: 
+    /*
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 0% 0%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 100% 0%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 100% 100%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 0% 100%,
+    */
+    
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 50% 0%,
+    Radial-Gradient(Circle, Var(--Color2) Var(--ParticleSize), #0000 0) 100% 50%,
+    Radial-Gradient(Circle, Var(--Color3) Var(--ParticleSize), #0000 0) 50% 100%,
+    Radial-Gradient(Circle, Var(--Color4) Var(--ParticleSize), #0000 0) 0% 50%,
+    
+    /* Bottom Right */
+    Radial-Gradient(Circle, Var(--Color5) Var(--ParticleSize), #0000 0) 80% 90%,
+    Radial-Gradient(Circle, Var(--Color6) Var(--ParticleSize), #0000 0) 95% 90%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 90% 70%,
+    Radial-Gradient(Circle, Var(--Color2) Var(--ParticleSize), #0000 0) 100% 60%,
+    Radial-Gradient(Circle, Var(--Color3) Var(--ParticleSize), #0000 0) 55% 80%,
+    Radial-Gradient(Circle, Var(--Color4) Var(--ParticleSize), #0000 0) 70% 77%,
+    
+    /* Bottom Left */
+    Radial-Gradient(Circle, Var(--Color5) Var(--ParticleSize), #0000 0) 22% 90%,
+    Radial-Gradient(Circle, Var(--Color6) Var(--ParticleSize), #0000 0) 45% 90%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 33% 70%,
+    Radial-Gradient(Circle, Var(--Color2) Var(--ParticleSize), #0000 0) 10% 60%,
+    Radial-Gradient(Circle, Var(--Color3) Var(--ParticleSize), #0000 0) 31% 80%,
+    Radial-Gradient(Circle, Var(--Color4) Var(--ParticleSize), #0000 0) 28% 77%,
+    Radial-Gradient(Circle, Var(--Color5) Var(--ParticleSize), #0000 0) 13% 72%,
+    
+    /* Top Left */
+    Radial-Gradient(Circle, Var(--Color6) Var(--ParticleSize), #0000 0) 80% 10%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 95% 14%,
+    Radial-Gradient(Circle, Var(--Color2) Var(--ParticleSize), #0000 0) 90% 23%,
+    Radial-Gradient(Circle, Var(--Color3) Var(--ParticleSize), #0000 0) 100% 43%,
+    Radial-Gradient(Circle, Var(--Color4) Var(--ParticleSize), #0000 0) 85% 27%,
+    Radial-Gradient(Circle, Var(--Color5) Var(--ParticleSize), #0000 0) 77% 37%,
+    Radial-Gradient(Circle, Var(--Color6) Var(--ParticleSize), #0000 0) 60% 7%,
+    
+    /* Top Right */
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 22% 14%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 45% 20%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 33% 34%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 10% 29%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 31% 37%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 28% 7%,
+    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 13% 42%
+    ;
+  Background-Size: Var(--InitialSize) Var(--InitialSize);
+  Background-Repeat: No-Repeat;
+}
+
+.Firework::Before {
+  --X: -50%;
+  --Y: -50%;
+  --InitialY: -50%;
+/*   Transform: Translate(-20vmin, -2vmin) Rotate(40deg) Scale(1.3) RotateY(40deg); */
+  Transform: Translate(-50%, -50%) Rotate(40deg) Scale(1.3) RotateY(40deg);
+/*   Animation: FireworkPseudo 2s Infinite; */
+}
+
+.Firework::After {
+  --X: -50%;
+  --Y: -50%;
+  --InitialY: -50%;
+/*   Transform: Translate(44vmin, -50%) Rotate(170deg) Scale(1.15) RotateY(-30deg); */
+  Transform: Translate(-50%, -50%) Rotate(170deg) Scale(1.15) RotateY(-30deg);
+/*   Animation: FireworkPseudo 2s Infinite; */
+}
+
+.Firework:nth-Child(2) {
+  --X: 30vmin;
+}
+
+.Firework:nth-Child(2),
+.Firework:nth-Child(2)::Before,
+.Firework:nth-Child(2)::After {
+  --Color1: Pink;
+  --Color2: Violet;
+  --Color3: Fuchsia;
+  --Color4: Orchid;
+  --Color5: Plum;
+  --Color6: Lavender;  
+  --FinalSize: 40vmin;
+  Left: 30%;
+  Top: 60%;
+  Animation-Delay: -0.25s;
+}
+
+.Firework:nth-Child(3) {
+  --X: -30vmin;
+  --Y: -50vmin;
+}
+
+.Firework:nth-Child(3),
+.Firework:nth-Child(3)::Before,
+.Firework:nth-Child(3)::After {
+  --Color1: Cyan;
+  --Color2: Lightcyan;
+  --Color3: Lightblue;
+  --Color4: PaleTurquoise;
+  --Color5: SkyBlue;
+  --Color6: Lavender;
+  --FinalSize: 35vmin;
+  Left: 70%;
+  Top: 60%;
+  Animation-Delay: -0.4s;
+}
+
+.Firework:nth-Child(4) {
+  --X: 30vmin;
+  --Y: -55vmin;
+}
+
+.Firework:nth-Child(4),
+.Firework:nth-Child(4)::Before,
+.Firework:nth-Child(4)::After {
+  --Color1: Cyan;
+  --Color2: Lightcyan;
+  --Color3: Lightblue;
+  --Color4: PaleTurquoise;
+  --Color5: SkyBlue;
+  --Color6: Lavender;
+  --FinalSize: 55vmin;
+  Left: 70%;
+  Top: 60%;
+  Animation-Delay: -0.4s;
+}
+
+.Firework:nth-Child(5) {
+  --X: 40vmin;
+  --Y: 55vmin;
+}
+
+.Firework:nth-Child(5),
+.Firework:nth-Child(5)::Before,
+.Firework:nth-Child(5)::After {
+--Color1: Yellow;
+  --Color2: Khaki;
+  --Color3: White;
+  --Color4: Orchid;
+  --Color5: Plum;
+  --Color6: Lavender;  
+  --FinalSize: 35vmin;
+  Left: 70%;
+  Top: 60%;
+  Animation-Delay: -0.4s;
+}
+
 
