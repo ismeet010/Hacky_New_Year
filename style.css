@@ -29,6 +29,7 @@ body
  left:0px;
  height:100vh;
  width: 50vw;
+ z-index: 4;
 }
 
 #curtain2
@@ -38,6 +39,7 @@ body
  height:100vh;
  right:0px;
  width:50vw;
+ z-index: 4;
 }
 
 #bow{
@@ -46,6 +48,7 @@ body
     left: 47%;
     width:100px;
     height:140px;
+    z-index: 6;
 }
 
 .container{
@@ -80,18 +83,12 @@ body
 }
 
 
-@Keyframes Firework {
+@keyframes Firework {
   0% { Transform: Translate(Var(--X), Var(--InitialY)); Width: Var(--InitialSize); Opacity: 1; }
   50% { Width: 0.5vmin; Opacity: 1; }
   100% { Width: Var(--FinalSize); Opacity: 0; }
 }
 
-/* @Keyframes FireworkPseudo {
-  0% { Transform: Translate(-50%, -50%); Width: Var(--InitialSize); Opacity: 1; }
-  50% { Width: 0.5vmin; Opacity: 1; }
-  100% { Width: Var(--FinalSize); Opacity: 0; }
-}
- */
 .Firework,
 .Firework::Before,
 .Firework::After
@@ -265,4 +262,24 @@ body
   Animation-Delay: -0.4s;
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    width: 80vw;
+}
+.footer-heart{font-family: open sans, sans-serif;
+color: #b3a9ea; text-align: center;
+}
 
+.footer-heart a{border-bottom: 1px solid #eadea9;color: #9c8bef;padding-bottom: .25em; text-decoration: none;}
+
+.footer-heart a:hover{color:#f4c6fb; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: .3em;
+  text-decoration: none;}
+
+.emoji{vertical-align: middle;}
