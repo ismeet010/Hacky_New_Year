@@ -48,6 +48,36 @@ body
     height:140px;
 }
 
+.container{
+    position: absolute;
+    width: 100vw;
+    height: 95vh;
+    /* top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -250px; */
+    padding: 0;
+}
+.literal{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 90px;
+    font-family: 'Varela Round', sans-serif;
+    line-height: 700px;
+    white-space: nowrap;
+    color: hsl(185, 88%, 84%);
+    opacity: 0;
+}
+.literal span{
+    opacity: 0;
+}
+.container > canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 
 @Keyframes Firework {
@@ -171,7 +201,7 @@ body
   --Color6: Lavender;  
   --FinalSize: 40vmin;
   Left: 30%;
-  Top: 60%;
+  Top: 50%;
   Animation-Delay: -0.25s;
 }
 
@@ -191,7 +221,7 @@ body
   --Color6: Lavender;
   --FinalSize: 35vmin;
   Left: 70%;
-  Top: 60%;
+  Top: 65%;
   Animation-Delay: -0.4s;
 }
 
@@ -210,7 +240,7 @@ body
   --Color5: SkyBlue;
   --Color6: Lavender;
   --FinalSize: 55vmin;
-  Left: 70%;
+  Left: 60%;
   Top: 60%;
   Animation-Delay: -0.4s;
 }
@@ -230,7 +260,7 @@ body
   --Color5: Plum;
   --Color6: Lavender;  
   --FinalSize: 35vmin;
-  Left: 70%;
+  Left: 80%;
   Top: 60%;
   Animation-Delay: -0.4s;
 }
