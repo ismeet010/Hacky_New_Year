@@ -1,3 +1,4 @@
+// Curtain animation
 var tog = true;
     function open_curtain()
 {
@@ -18,6 +19,7 @@ function toggle(){
     tog ? open_curtain() : close_curtain();
 }
 
+// text animation
 
 var RENDERER = {
 	JOINT_COUNT : 80,

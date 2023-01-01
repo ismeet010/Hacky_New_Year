@@ -82,6 +82,7 @@ body
     left: 0;
 }
 
+ /* Firework */
 
 @keyframes Firework {
   0% { Transform: Translate(Var(--X), Var(--InitialY)); Width: Var(--InitialSize); Opacity: 1; }
@@ -114,12 +115,6 @@ body
   Width: Var(--InitialSize);
   Aspect-Ratio: 1;
   Background: 
-    /*
-    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 0% 0%,
-    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 100% 0%,
-    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 100% 100%,
-    Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 0% 100%,
-    */
     
     Radial-Gradient(Circle, Var(--Color1) Var(--ParticleSize), #0000 0) 50% 0%,
     Radial-Gradient(Circle, Var(--Color2) Var(--ParticleSize), #0000 0) 100% 50%,
@@ -262,6 +257,7 @@ body
   Animation-Delay: -0.4s;
 }
 
+/* footer */
 footer{
     position: absolute;
     bottom: 0;
